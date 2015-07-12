@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WebSmartHouse.Boiler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAEAAAAAAgEAAAAAAQAAAIADAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Boiler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebSmartHouse.Heating" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAgEAAAAAAQAAAAEAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Model\Heating.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebSmartHouse.Lamp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAgEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Lamp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebSmartHouse.Louvers" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQEAAAAAAgEAAAAAAQAAAAAEAAAAABAAABAABA=</HashCode>
+      <FileName>Model\Louvers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebSmartHouse.TV" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAkAAAIAAgEAAAAAAQAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Model\TV\TV.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Struct Name="WebSmartHouse.TVSettings" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAIAAAgCAAA=</HashCode>
+      <FileName>Model\TV\TVSettings.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="WebSmartHouse.IBoiler" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAIADAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Interfaces\IBoiler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebSmartHouse.IDevice" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Interfaces\IDevice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebSmartHouse.IHeating" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Model\Interfaces\IHeating.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebSmartHouse.ILouvers" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQAAAAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAAA=</HashCode>
+      <FileName>Model\Interfaces\ILouvers.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebSmartHouse.ITV" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAgAAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Model\Interfaces\ITV.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="WebSmartHouse.Channels" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAoAAAAAAAAAAAIAAAAAAAABAAAAAAEAAAgAA=</HashCode>
+      <FileName>Model\TV\Channels.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

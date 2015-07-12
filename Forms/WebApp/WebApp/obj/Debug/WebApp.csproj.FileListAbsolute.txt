@@ -1,0 +1,5 @@
+D:\Oracle\WebApp\WebApp\bin\WebApp.dll
+D:\Oracle\WebApp\WebApp\bin\WebApp.pdb
+D:\Oracle\WebApp\WebApp\obj\Debug\WebApp.dll
+D:\Oracle\WebApp\WebApp\obj\Debug\WebApp.pdb
+D:\Oracle\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
