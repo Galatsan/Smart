@@ -53,8 +53,10 @@ namespace SmartHouseMVC.Controllers
                 {
                     dc.louvers.Add(new Louvers(AddName));
                 }
+                dc.SaveChanges();
             }
-            dc.SaveChanges();
+            else
+                ViewBag.ErrorAddName = "Введите название";
             return View(dc);
         }
         public ActionResult OnOff(int id, string type)
@@ -249,8 +251,6 @@ namespace SmartHouseMVC.Controllers
                 dc.SaveChanges();
                 return View(l);
             }
-
-
         }
     }
 }

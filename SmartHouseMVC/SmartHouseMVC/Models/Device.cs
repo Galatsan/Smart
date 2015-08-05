@@ -1,7 +1,6 @@
 ﻿using System;
 namespace Models.SmartHouseMVC
 {
-    [Serializable]
     public class Device
     {
         public int Id { get; set; }

@@ -5,7 +5,6 @@ using System.Web;
 
 namespace Models.SmartHouseMVC
 {
-    [Serializable]
     public class Louvers : Device
     {
         public bool isLower { get; set; }

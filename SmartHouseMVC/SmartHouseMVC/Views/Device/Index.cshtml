@@ -10,33 +10,39 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
     <div>
-        <form method="post">
-            <p>@Html.TextBox("AddName", "")</p>
+        <div id="AddPanel">
+            <form method="post">
+                Введите название устройства.<br />
+                <p>@Html.TextBox("AddName", "")</p>
 
 
-            @Html.RadioButton("AddDev", "Бойлер")
-            Бойлер<br />
-            @Html.RadioButton("AddDev", "Телевизор")
-            Телевизор<br />
-            @Html.RadioButton("AddDev", "Жалюзи")
-            Жалюзи<br />
-            @Html.RadioButton("AddDev", "Светильник")
-            Светильник<br />
-            @Html.RadioButton("AddDev", "Обогрев")
-            Обогрев<br />
+                @Html.RadioButton("AddDev", "Бойлер",true)
+                Бойлер<br />
+                @Html.RadioButton("AddDev", "Телевизор")
+                Телевизор<br />
+                @Html.RadioButton("AddDev", "Жалюзи")
+                Жалюзи<br />
+                @Html.RadioButton("AddDev", "Светильник")
+                Светильник<br />
+                @Html.RadioButton("AddDev", "Обогрев")
+                Обогрев<br />
 
 
-            <input name="AddDevButton" type="submit" value="Добавить" />
-        </form>
+                <input name="AddDevButton" type="submit" value="Добавить" /><br />
+                <label style="color:red;">@ViewBag.ErrorAddName</label>
+            </form>
+
+        </div>
         <table>
 
             @foreach (Device i in Model.tvsets)
             {
                 <tr>
-                    <td>@i.ToString()</td>
+                    <td id="tvsets">@i.ToString()</td>
                     <td>
                         @Html.ActionLink("Вкл/Выкл", "OnOff", new { id = i.Id, Type = i.GetType() })
                         @Html.ActionLink("Управлять", "Edit", new { id = i.Id, Type = i.GetType() })
@@ -48,7 +54,7 @@
             @foreach (Device i in Model.boilers)
             {
                 <tr>
-                    <td>@i.ToString()</td>
+                    <td id="boilers">@i.ToString()</td>
                     <td>
                         @Html.ActionLink("Вкл/Выкл", "OnOff", new { id = i.Id, Type = i.GetType() })
                         @Html.ActionLink("Управлять", "Edit", new { id = i.Id, Type = i.GetType() })
@@ -61,7 +67,7 @@
             @foreach (Device i in Model.heatings)
             {
                 <tr>
-                    <td>@i.ToString()</td>
+                    <td id="heatings">@i.ToString()</td>
                     <td>
                         @Html.ActionLink("Вкл/Выкл", "OnOff", new { id = i.Id, Type = i.GetType() })
                         @Html.ActionLink("Управлять", "Edit", new { id = i.Id, Type = i.GetType() })
@@ -74,7 +80,7 @@
             @foreach (Device i in Model.lamps)
             {
                 <tr>
-                    <td>@i.ToString()</td>
+                    <td id="lamps">@i.ToString()</td>
                     <td>
                         @Html.ActionLink("Вкл/Выкл", "OnOff", new { id = i.Id, Type = i.GetType() })
                         @Html.ActionLink("Убрать из списка", "Delete", new { id = i.Id, Type = i.GetType() })
@@ -86,7 +92,7 @@
             @foreach (Device i in Model.louvers)
             {
                 <tr>
-                    <td>@i.ToString()</td>
+                    <td id="louvers">@i.ToString()</td>
                     <td>
                         @Html.ActionLink("Вкл/Выкл", "OnOff", new { id = i.Id, Type = i.GetType() })
                         @Html.ActionLink("Управлять", "Edit", new { id = i.Id, Type = i.GetType() })

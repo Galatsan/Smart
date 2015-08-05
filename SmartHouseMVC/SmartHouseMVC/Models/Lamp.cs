@@ -2,7 +2,6 @@
 
 namespace Models.SmartHouseMVC
 {
-    [Serializable]
     public class Lamp : Device
     {
         public Lamp()

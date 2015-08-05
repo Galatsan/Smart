@@ -1,8 +1,7 @@
 ﻿using System;
 
 namespace Models.SmartHouseMVC
-{ 
-    [Serializable]
+{
     public class Heating : Device
     {
         public Heating()

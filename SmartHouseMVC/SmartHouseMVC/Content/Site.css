@@ -1,0 +1,67 @@
+﻿
+#tvsets {
+    background-color: #AFEEEE;
+}
+
+#boilers {
+    background-color: #E0FFFF;
+}
+
+#heatings {
+    background-color: #F0F8FF;
+}
+
+#lamps {
+    background-color: #F0FFFF;
+}
+
+#louvers {
+    background-color: #F5FFFA;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+a {
+    border: 1px solid #333;
+    display: inline-block;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #000;
+}
+
+    a:hover {
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        background: linear-gradient(to bottom, #fcfff4, #e9e9ce);
+        color: #a00;
+        cursor:pointer;
+    }
+#AddPanel {
+border:solid 1px #AFEEEE;
+float:right;
+margin:10px;
+padding:20px;
+}
+
+#AddName:hover {
+    border:solid 2px #AFEEEE;
+}
+
+#AddDev:hover {
+    border:solid 2px #AFEEEE;
+}

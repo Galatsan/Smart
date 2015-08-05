@@ -5,7 +5,6 @@ using System.Web;
 
 namespace Models.SmartHouseMVC
 {
-    [Serializable]
     public class Boiler : Device
     {
         public bool isFull{get;set;}

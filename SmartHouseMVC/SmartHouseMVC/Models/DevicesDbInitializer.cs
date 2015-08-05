@@ -21,7 +21,7 @@ namespace Models.SmartHouseMVC
             dc.lamps.Add(new Lamp("Коридор", false));
 
             dc.tvsets.Add(new TV("Sony KDL-32W503A", Channels.FOX, true, 5, 5, 5));
-            dc.tvsets.Add(new TV("Samsung JS9500", Channels.ICTV, true, 6, 7, 4));
+            dc.tvsets.Add(new TV("Samsung JS9500", Channels.ICTV, true, 6, 7, 3));
             dc.tvsets.Add(new TV("Sony KDL-42W705B", Channels.УТ1, true, 6, 7, 4));
             dc.tvsets.Add(new TV("Samsung JS8500", Channels.Украина, true, 6, 7, 4));
 
