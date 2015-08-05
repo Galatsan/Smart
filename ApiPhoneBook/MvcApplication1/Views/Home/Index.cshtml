@@ -1,0 +1,180 @@
+﻿<div id="body">
+    <div id="contentBlock" style="display: inline-block; margin: 20px; font-family: 'Times New Roman';">
+        
+    </div>
+
+    <div id="addEditBlock" style="float: right; margin: 20px; border: 1px solid #7ac0da; padding: 10px">
+        <input id="id" type="hidden" value="" />
+        SecondName<br />
+        <input id="secondName" type="text" value="" /><br />
+        FirstName<br />
+        <input id="firstName" type="text" value="" /><br />
+        PhoneNumber<br />
+        <input id="phone" type="text" value="" /><br />
+        <label id="dataCreate"></label>
+        <label id="dataChange"></label>
+        <input id="addEditPhoneButton" type="button" value="" />
+        <input id="closeAddformButton" type="button" value="Закрыть" />
+    </div>
+    <br />
+    <input id="AddButton" type="button" value="Add" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            GetAllNums();
+            $('#addEditBlock').css('display', 'none');
+        });
+
+        $("#closeAddformButton").click(function () {
+            $('#addEditBlock').css('display', 'none');
+        });
+
+        $("#AddButton").click(function () {
+            $("#addEditBlock").css('display', 'block');
+            $("#addEditPhoneButton").attr('value', 'Add phone');
+            $("#secondName").val("");
+            $("#firstName").val("");
+            $("#phone").val("");
+            $("#dataCreate").html("");
+            $("#dataChange").html("");
+        });
+
+        $("#addEditPhoneButton").click(function () {
+            if ($("#secondName").val().trim() != "" && $("#firstName").val().trim() != "" && $("#phone").val().trim() != "")
+                if ($("#addEditPhoneButton").attr('value') == "Add phone") {
+                    AddPhone();
+                }
+                else {
+                    id = $("#id").val();
+                    UpdateNumber(id);
+                }
+
+            else alert("Не все поля заполнены.");
+        });
+
+        function UpdateNumber(id) {
+            var number = {
+                Id: id,
+                Secondname: $("#secondName").val(),
+                FirstName: $("#firstName").val(),
+                PhoneNumber: $("#phone").val(),
+                DataChange: new Date(Date.now())
+            };
+            $.ajax({
+                url: "/api/values/" + id,
+                type: "PUT",
+                data: JSON.stringify(number),
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    GetAllNums();
+                    $('#addEditBlock').css('display', 'none');
+                },
+                error: function (x, y, z) {
+                    alert(x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+
+        function AddPhone(number) {
+            var number = {
+                Secondname: $("#secondName").val(),
+                FirstName: $("#firstName").val(),
+                PhoneNumber: $("#phone").val(),
+                DataCreate: new Date(Date.now()),
+                DataChange: new Date(Date.now())
+            };
+            $.ajax({
+                url: "/api/values",
+                type: "POST",
+                data: JSON.stringify(number),
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    GetAllNums();
+                    $('#addEditBlock').css('display', 'none');
+                },
+                error: function (x, y, z) {
+                    alert(x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+
+        function DeleteNum(Num) {
+            if (confirm("Do yo ant to delet this number")) {
+                $('#addEditBlock').css('display', 'none');
+                var id = $(Num).attr('data-item');
+                $.ajax({
+                    url: '/api/values/' + id,
+                    type: 'DELETE',
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        GetAllNums();
+                    }
+                });
+            }
+        }
+        function SelectNum(Num) {
+            var id = $(Num).attr('data-item');
+            $.ajax({
+                url: '/api/values/' + id,
+                type: 'GET',
+                contentType: "application/json;charset=utf-8",
+                success: function (Number) {
+                    $("#addEditBlock").css('display', 'block');
+                    $("#addEditPhoneButton").attr('value', 'Save');
+                    $("#id").val(Number.Id);
+                    $("#secondName").val(Number.SecondName);
+                    $("#firstName").val(Number.FirstName);
+                    $("#phone").val(Number.PhoneNumber);
+                    var dataCreate = new Date(Number.DataCreate);
+                    var dataChange = new Date(Number.DataChange);
+                    $("#dataCreate").html("Date of creation: " + ConvertData(dataCreate));
+                    $("#dataChange").html("Date of change: " + ConvertData(dataChange));
+                }
+            });
+        }
+        function GetAllNums() {
+            $.ajax({
+                url: '/api/values',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var res = "<table><th>SecondName</th><th>FirstName</th><th>PhoneNumber</th>";
+                    $.each(data, function (index, Number) {
+                        res += "<tr><td>" + Number.SecondName + "</td><td> " + Number.FirstName + "</td><td>" + Number.PhoneNumber +
+                            "</td><td><a id='delNum' data-item='" + Number.Id + "' onclick='DeleteNum(this);' >Delete</a></td>" +
+                        "<td><a id='editNum' data-item='" + Number.Id + "' onclick='SelectNum(this);' >Edit</a><br/></tr>";
+                    });
+                    res += "</table>";
+                    $("#contentBlock").html(res);
+                }
+            });
+        }
+
+        function ConvertData(t) {
+            var s;
+            var y = t.getFullYear();
+            var d = t.getDate();
+            var h = t.getHours();
+            var m = t.getMinutes().toString();
+            var mon = t.getMonth();
+            switch (mon) {
+                case 0: s = "January"; break;
+                case 1: s = "February"; break;
+                case 2: s = "March"; break;
+                case 3: s = "April"; break;
+                case 4: s = "May"; break;
+                case 5: s = "June"; break;
+                case 6: s = "July"; break;
+                case 7: s = "August"; break;
+                case 8: s = "September"; break;
+                case 9: s = "October"; break;
+                case 10: s = "November"; break;
+                case 11: s = "December"; break;
+            }
+            if (m.length == 1)
+                m = "0" + m;
+            var result = d + " " + s + " " + y + "г., " + h + ":" + m;
+            return result;
+        }
+
+    </script>
+</div>
